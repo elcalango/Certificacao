@@ -10,48 +10,48 @@ namespace Chapter1
     //LISTING 1-15 Using Task.WaitAny
     public static class Listing115
     {
-        public static void Main()
-        {
+        //public static void Main()
+        //{
 
-            Task<int>[] tasks = new Task<int>[3];
+        //    Task<int>[] tasks = new Task<int>[3];
 
-            tasks[0] = Task.Run(() =>
-            {
-                Thread.Sleep(2000);
-                Console.WriteLine("1");
-                return 1;
-            });
+        //    tasks[0] = Task.Run(() =>
+        //    {
+        //        Thread.Sleep(2000);
+        //        Console.WriteLine("1");
+        //        return 1;
+        //    });
 
-            tasks[1] = Task.Run(() =>
-            {
-                Thread.Sleep(1000);
-                Console.WriteLine("2");
-                return 2;
-            });
+        //    tasks[1] = Task.Run(() =>
+        //    {
+        //        Thread.Sleep(1000);
+        //        Console.WriteLine("2");
+        //        return 2;
+        //    });
 
-            tasks[2] = Task.Run(() =>
-            {
-                Thread.Sleep(3000);
-                Console.WriteLine("3");
-                return 3;
-            });
+        //    tasks[2] = Task.Run(() =>
+        //    {
+        //        Thread.Sleep(3000);
+        //        Console.WriteLine("3");
+        //        return 3;
+        //    });
 
-            while (tasks.Length > 0)
-            {
-                int i = Task.WaitAny(tasks);
-                var completedTask = tasks[i];
+        //    while (tasks.Length > 0)
+        //    {
+        //        int i = Task.WaitAny(tasks);
+        //        var completedTask = tasks[i];
 
-                Console.WriteLine("Result completed task: {0}", completedTask.Result);
+        //        Console.WriteLine("Result completed task: {0}", completedTask.Result);
 
-                var temp = tasks.ToList();
-                temp.RemoveAt(i);
-                tasks = temp.ToArray();
-            }
-
-
+        //        var temp = tasks.ToList();
+        //        temp.RemoveAt(i);
+        //        tasks = temp.ToArray();
+        //    }
 
 
-        }
+
+
+        //}
 
     }
 }
