@@ -11,21 +11,23 @@ namespace Chapter1
     //LISTING 1-20 Using ConfigureAwait
     public static class Listing120
     {
-        public static void Main()
+        public static string Output { get; private set; }
+
+        //public static void Main()
+        //{
+        //    Button_Click();
+        //    string result = Output;
+        //    Console.WriteLine(result);
+
+        //}
+
+        private static async  void Button_Click( )
         {
-
-            string result = DownloadContent().Result;
-            Console.WriteLine(result);
-
-        }
-
-        private static async Task<string> DownloadContent()
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                string result = await client.GetStringAsync("http://www.microsoft.com");
-                return result;
-            }
+            HttpClient httpClient = new HttpClient();
+            string content = await httpClient
+            .GetStringAsync("http://www.microsoft.com")
+            .ConfigureAwait(false);
+            Output = content;
         }
     }
 }

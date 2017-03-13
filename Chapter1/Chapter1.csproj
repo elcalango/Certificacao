@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExemploAsyncAwait.cs" />
+    <Compile Include="Listing131.cs" />
+    <Compile Include="Listing130.cs" />
+    <Compile Include="Listing128.cs" />
+    <Compile Include="Listing127.cs" />
+    <Compile Include="Listing123.cs" />
     <Compile Include="Listing120.cs" />
     <Compile Include="Listing118.cs" />
     <Compile Include="Listing117.cs" />
